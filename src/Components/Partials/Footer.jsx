@@ -29,16 +29,17 @@ export const Footer = () => {
     }, [API_BASE + FooterEndpoint])
 
     return (
-        <>
+        <footer className="bg-green grid grid-cols-3 place-items-center py-0 px-[5rem] text-beige">
+            <p className="mt-0">her er fod</p>
             {data && Object.values(data).map((foot, ind) => {
                 return (
                     <>
-                        <ReactMarkdown children={foot.SoMe}/>
-                        <ReactMarkdown children={foot.Copyright}/>
-                        <ReactMarkdown children={foot.Contact}/>
+                        <ReactMarkdown className="mt-0" children={foot.SoMe} />
+                        <ReactMarkdown className="mt-0" children={foot.Copyright} />
+                        <ReactMarkdown className="mt-0" children={foot.Contact} />
                     </>
                 )
             })}
-        </>
+        </footer>
     )
 }

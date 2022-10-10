@@ -8,8 +8,11 @@ function App() {
   return (
     <>
       <Header />
-      <AppRouter />
-      <BlogSidebar />
+      <main className="main">
+        <AppRouter />
+        <BlogSidebar />
+      </main>
+
       <Footer />
     </>
   );

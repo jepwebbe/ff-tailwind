@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { API_BASE } from '../App/AppServices/API_URL';
-import { ContactStyle } from './Contact.Styled'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 
@@ -67,9 +66,9 @@ const Contact = () => {
     navigate("/thanks")
   }
   return (
-    <ContactStyle>
+    <section>
       <h1>Kontakt</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col">
 
         <input
           onChange={handleChange}
@@ -107,9 +106,9 @@ const Contact = () => {
           placeholder="Din besked"
           required />
 
-        <button type="submit">Send</button>
+        <button className="button" type="submit">Send</button>
       </form>
-    </ContactStyle>
+    </section>
   )
 }
 

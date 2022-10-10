@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import { Link, Outlet } from "react-router-dom"
 import { API_BASE, API_BLOGS } from '../App/AppServices/API_URL';
 import { Page } from '../App/Styles/Page';
-import { BloglistStyle } from './Bloglist.Styled';
 
 export const Bloglist = () => {
     const [data, setData] = useState([]);
@@ -39,7 +38,7 @@ export const Bloglist = () => {
       }
     return (
         <Page title="The blogs page" description="the page of blogs">
-            <BloglistStyle>
+            <ul>
                 <button onClick={handleSort} >Sorter mig</button>
                 {data ? 
                     data.map((blog, idx) => {
@@ -60,7 +59,7 @@ export const Bloglist = () => {
                     }) :
                     <>...Loading</>
                 }
-            </BloglistStyle>
+            </ul>
         </Page>
     )
 }

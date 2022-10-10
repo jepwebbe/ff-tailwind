@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import { Link, Outlet } from "react-router-dom"
 import { API_BASE, API_BLOGS } from '../App/AppServices/API_URL';
 import { Page } from '../App/Styles/Page';
-import { HomeStyle } from './Home.Styled';
 
 export const Home = () => {
     const [data, setData] = useState([]);
@@ -32,7 +31,7 @@ export const Home = () => {
 
     return (
         <Page title="The page of home" description="Home is where the home is">
-            <HomeStyle>
+            <section>
                 {data ?
                     data.slice(0, 2).map((blog, idx) => {
                         return (
@@ -51,7 +50,7 @@ export const Home = () => {
                     }) :
                     <>...Loading</>
                 }
-            </HomeStyle>
+            </section>
         </Page>
     )
 }

@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-.my-custom-style {
-    background-color: green;
+main.main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    min-height: 95vh;
+    color: #416a59;
+
+    a {
+        color: #659dbd;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #a9c25d;
+    }
+
+    button.button {
+        background-color: #659dbd;
+        border: none;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        color: #f5eec2;
+    }
+
+    button:hover {
+        background-color: #416a59;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+    font-style: italic;
 }
