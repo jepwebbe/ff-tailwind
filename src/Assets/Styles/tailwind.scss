@@ -21,12 +21,16 @@ main.main {
         color: #a9c25d;
     }
 
-    button.button {
+    button{
         background-color: #659dbd;
         border: none;
         border-radius: 1rem;
         padding: 0.5rem;
         color: #f5eec2;
+    
+    a{
+        color: #f5eec2;
+    }
     }
 
     button:hover {

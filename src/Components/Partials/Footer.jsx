@@ -29,8 +29,7 @@ export const Footer = () => {
     }, [API_BASE + FooterEndpoint])
 
     return (
-        <footer className="bg-green grid grid-cols-3 place-items-center py-0 px-[5rem] text-beige">
-            <p className="mt-0">her er fod</p>
+        <footer className="bg-green grid grid-cols-3 place-items-center py-0 text-beig min-h-[5rem] text-beige">
             {data && Object.values(data).map((foot, ind) => {
                 return (
                     <>

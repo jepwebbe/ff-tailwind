@@ -27,13 +27,13 @@ export const BlogSidebar = () => {
 
     return (
 
-            <div>
+            <ul className="sticky top-[5rem] bg-beige list-none h-[30rem] m-0 pl-[1rem] rounded-2xl">
                 <h3>Seneste indlæg</h3>
-
+                
                 {data ?
                     data.slice(-5).map((blog, idx) => {
                         return (
-                            <li key={idx}>
+                            <li key={idx} className="py-[1rem] px-[0] my-[auto] mx-0">
                                 <Link to={"/bloglist/" + blog.id}>{blog.attributes.title}</Link>
                             </li>
                         )
@@ -41,6 +41,6 @@ export const BlogSidebar = () => {
                     }).reverse() :
                     <>...Loading</>
                 }
-            </div>
+            </ul>
     )
 }

@@ -43,7 +43,7 @@ export const Home = () => {
                                     <ReactMarkdown children={showMore ? blog.attributes.body : `${blog.attributes.body.substring(0, 400)}`} />
                                     <button><Link to={"/bloglist/" + blog.id}>Læs indlæg</Link></button>
                                 </div>
-                                <img src={API_BASE + blog.attributes.cover.data[0].attributes.url} />
+                                {/* <img src={API_BASE + blog.attributes.cover.data[0].attributes.url} /> */}
                             </article>
                         )
 
