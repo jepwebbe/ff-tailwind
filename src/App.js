@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="main">
+      <main className="main grid grid-cols-1 sm:grid-rows sm:grid-cols-[3fr_1fr] py-[1rem] px-[1rem] sm:px-[5rem]">
         <AppRouter />
         <BlogSidebar />
       </main>

@@ -27,7 +27,7 @@ export const BlogSidebar = () => {
 
     return (
 
-            <ul className="sticky top-[5rem] bg-beige list-none h-[30rem] m-0 pl-[1rem] rounded-2xl">
+            <ul className="hidden sm:block sticky top-[5rem] bg-beige list-none h-[30rem] m-0 pl-[1rem] rounded-2xl">
                 <h3>Seneste indlæg</h3>
                 
                 {data ?

@@ -1,13 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+* {
+    box-sizing: border-box;
+}
+html, body{
+    overflow:hidden;
+}
 main.main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem 5rem;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
     gap: 1rem;
     min-height: 95vh;
     color: #416a59;
