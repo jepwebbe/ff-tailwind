@@ -31,8 +31,7 @@ export const Blogdetails = () => {
         <article key={apiData.id} className="border-solid bg-beige p-[1rem] text-justify">
             <h2>{apiData && apiData.attributes.title}</h2>
             <p>By {apiData && apiData.attributes.authors.data[0].attributes.author}</p>
-            <div className="grid grid-cols-3 gap-[1rem] place-items-center">
-
+            <div className="grid grid-cols-3 gap-[1rem] place-items-center">a
                 {apiData && apiData.attributes.cover.data.map((imgs, idx) => {
                     console.log(API_BASE + imgs.attributes.url)
                     return (
