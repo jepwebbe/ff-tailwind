@@ -30,7 +30,7 @@ export const Home = () => {
     }, [API_BASE + API_BASE])
 
     return (
-        <Page title="The page of home" description="Home is where the home is">
+        <Page title="The page of Tailwind home" description="Home is where the home is">
             <section>
                 {data ?
                     data.slice(0, 2).map((blog, idx) => {

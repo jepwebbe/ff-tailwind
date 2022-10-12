@@ -26,17 +26,18 @@ export const Footer = () => {
                     console.log('fetch aborted')
                 }
             })
+            console.log(data)
     }, [API_BASE + FooterEndpoint])
 
     return (
         <footer className="bg-green grid grid-cols-3 place-items-center py-0 text-beig min-h-[5rem] text-beige">
             {data && Object.values(data).map((foot, ind) => {
                 return (
-                    <>
+                    <div key={ind}>
                         <ReactMarkdown className="mt-0" children={foot.SoMe} />
                         <ReactMarkdown className="mt-0" children={foot.Copyright} />
                         <ReactMarkdown className="mt-0" children={foot.Contact} />
-                    </>
+                    </div>
                 )
             })}
         </footer>
