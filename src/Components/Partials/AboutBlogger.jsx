@@ -33,13 +33,7 @@ export const Aboutman = () => {
                 console.log(about)
                 return (
                     < div key={ind}>
-                        <ReactMarkdown children={about.description}/>
-{/*                         {about && about.picture.map((img, inx) => {
-                            console.log(img)
-                            return (
-                                <img src={API_BASE + img.url} />
-                            )
-                        })} */}
+                        <ReactMarkdown children={about.description} />
                     </div>
                 )
             })}

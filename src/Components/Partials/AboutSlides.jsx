@@ -22,35 +22,43 @@ export const AboutSlides = () => {
                 }
             })
     }, [API_BASE])
-
+    console.log(data)
+    /* Below, I'm generating buttons and images. Eact has two level of mapping where I first map thorugh the blogposts and then through the images of each blogpost, to display all images of all blogposts. I also sort the second level of maps on both to display them in ascending order by id */
     return (
-        <div className="w-[500px] text-center overflow-hidden">
-             {data ?
-                    data.map((link, ind) => {
-                        return (
-                            <a key={ind} href={"#slide-"+link.id} className="z-100 active:top-[1] inline-flex w-[1.5rem] h-[1.5rem] bg-blue text-white no-underline items-center justify-center rounded-[50%] mt-[0] mx-0 mb-[0.5rem] relative">{link.id}</a>
-                        )
-
-                    }) :
-                    <>...Loading</>
-                }
-            {/* <a href="#slide-1" className="z-100 active:top-[1] inline-flex w-[1.5rem] h-[1.5rem] bg-blue text-[white] no-underline items-center justify-center rounded-[50%] mt-[0] mx-0 mb-[0.5rem] relative">1</a>
-            <a href="#slide-2" className="z-100 active:top-[1] inline-flex w-[1.5rem] h-[1.5rem] bg-blue text-[white] no-underline items-center justify-center rounded-[50%] mt-[0] mx-0 mb-[0.5rem] relative">2</a> */}
-            <div className="flex overflow-x-auto snap-x scroll-smooth scrolling-touch">
+        <section className="w-[500px] text-center overflow-hidden mx-[auto] mt-[3rem]">
+            <h3>I'm a CSS slider of all the blogpost images</h3>
+            <p>Click a link to slide</p>
+            {data ?
+                data.map((link) => {
+                    return (
+                        link && link.attributes.cover.data.sort((a, b) => a.id > b.id ? +1 : -1).map((thelink, ind) => {
+                            return (
+                               <a key={ind} href={"#slide-" + thelink.id} > <button className="z-100 inline-flex w-[1.5rem] h-[1.5rem] no-underline items-center justify-center rounded-[50%] mt-0 mx-0 mb-[0.5rem]">{thelink.id}</button></a>
+                            )
+                        })
+                    )
+                }) :
+                <>...Loading</>
+            }
+            <div className="flex overflow-x-hidden snap-x scroll-smooth scrolling-touch">
 
                 {data &&
-                    data.map((blog, idx) => {
+                    data.map((blog) => {
                         return (
-                                <img key={idx} id={"slide-" + blog.id} className="snap-start shrink-0 w-[300px] h-[300px] mr-[50px] rounded-[10px] bg-[#eee] origin-center scale-1 transition-transform-[0.5s] relative flex justify-center items-center text-[100px] object-cover absolute top-0 left-0 w-[100%] h-[100%]" src={API_BASE + blog.attributes.cover.data[0].attributes.url} />
+                            blog && blog.attributes.cover.data.sort((a, b) => a.id > b.id ? +1 : -1).map((imgs, inx) => {
+                                return (
+                                    <img key={inx} id={"slide-" + imgs.id} src={API_BASE + imgs.attributes.url} className="snap-start shrink-0 mr-[50px] rounded-[10px] bg-[#eee] origin-center scale-1 transition-transform-[0.5s] relative text-[100px]  w-[100%] h-[100%]" />
+                                )
+                            })
                         )
-
                     })
                 }
             </div>
 
 
 
-        </div>
+        </section>
     )
 }
 
+    // https://css-tricks.com/css-only-carousel/
