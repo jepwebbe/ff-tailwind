@@ -25,7 +25,7 @@ export const AboutSlides = () => {
     console.log(data)
     /* Below, I'm generating buttons and images. Eact has two level of mapping where I first map thorugh the blogposts and then through the images of each blogpost, to display all images of all blogposts. I also sort the second level of maps on both to display them in ascending order by id */
     return (
-        <section className="w-[500px] text-center overflow-hidden mx-[auto] mt-[3rem]">
+        <section className="max-w-[500px] sm:max-w-[600px] text-center overflow-hidden mx-[auto] mt-[3rem]">
             <h3>I'm a CSS slider of all the blogpost images</h3>
             <p>Click a link to slide</p>
             {data ?
